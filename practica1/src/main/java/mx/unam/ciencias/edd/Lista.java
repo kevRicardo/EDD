@@ -222,11 +222,11 @@ public class Lista<T> implements Coleccion<T> {
     }
 
     private Nodo iesimoNodo(int i){
-	Nodo n = cabeza;
+	Iterador it = (Iterador)iteradorLista();
 	int c = 0;
 	while(c++ < i)
-	    n = n.siguiente;
-	return n;
+	    it.next();
+	return it.siguiente;
     }
 
     /**
@@ -262,13 +262,11 @@ public class Lista<T> implements Coleccion<T> {
     }
 
     private Nodo buscaNodo(T elemento){
-	Nodo n = cabeza;
-	while(n != null){
-	    if(elemento.equals(n.elemento))
-		return n;
-	    n = n.siguiente;
-	}
-	return n;
+	Iterador it = (Iterador)iteradorLista();
+	while(it.hasNext())
+	    if(it.next().equals(elemento))
+		return it.anterior;
+	return null;
     }
 
     /**
@@ -317,11 +315,9 @@ public class Lista<T> implements Coleccion<T> {
     public Lista<T> reversa() {
         // Aquí va su código.
 	Lista<T> l = new Lista<>();
-	Nodo n = cabeza;
-	while(n != null){
-	    l.agregaInicio(n.elemento);
-	    n = n.siguiente;
-	}
+	Iterador it = (Iterador)iteradorLista();
+	while(it.hasNext())
+	    l.agregaInicio(it.next());
 	return l;
     }
 
@@ -333,11 +329,9 @@ public class Lista<T> implements Coleccion<T> {
     public Lista<T> copia() {
         // Aquí va su código.
 	Lista<T> l = new Lista<>();
-	Nodo n = cabeza;
-	while(n != null){
-	    l.agrega(n.elemento);
-	    n = n.siguiente;
-	}
+	Iterador it = (Iterador)iteradorLista();
+	while(it.hasNext())
+	    l.agrega(it.next());
 	return l;
     }
 
@@ -397,12 +391,11 @@ public class Lista<T> implements Coleccion<T> {
     public int indiceDe(T elemento) {
         // Aquí va su código.
 	int c = 0;
-	Nodo n = cabeza;
-	while(n != null){
-	    if(n.elemento.equals(elemento))
+	Iterador it = (Iterador)iteradorLista();
+	while(it.hasNext()){
+	    if(it.next().equals(elemento))
 		return c;
 	    c++;
-	    n = n.siguiente;
 	}
 	return -1;
     }
@@ -415,13 +408,11 @@ public class Lista<T> implements Coleccion<T> {
         // Aquí va su código.
 	if(esVacia())
 	    return "[]";
-	Nodo n = cabeza.siguiente;
-	String r = "[" + cabeza.elemento;
-	while(n != null){
-	    r += ", " + n.elemento;
-	    n = n.siguiente;
-	}
-	return r + "]";
+	Iterador it = (Iterador)iteradorLista();
+	String r = "[";
+	while(it.hasNext())
+	    r += String.format("%d, ", it.next());
+	return r.substring(0, r.length()-2) + "]";
     }
 
     /**
@@ -437,14 +428,10 @@ public class Lista<T> implements Coleccion<T> {
         // Aquí va su código.
 	if(longitud != lista.longitud)
 	    return false;
-	Nodo n = cabeza;
-	Nodo m = lista.cabeza;
-	while(n != null && m != null){
-	    if(!n.elemento.equals(m.elemento))
+	Iterador n = (Iterador)iteradorLista(), m = (Iterador)lista.iteradorLista();
+	while(n.hasNext() && m.hasNext())
+	    if(!n.next().equals(m.next()))
 		return false;
-	    n = n.siguiente;
-	    m = m.siguiente;
-	}
 	return true;
     }
 
