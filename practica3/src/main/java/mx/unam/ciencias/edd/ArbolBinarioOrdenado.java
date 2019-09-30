@@ -26,7 +26,7 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
         /* Inicializa al iterador. */
         public Iterador() {
             // Aquí va su código.
-	     pila = new Pila<Vertice>();
+	    pila = new Pila<Vertice>();
             Vertice v = raiz;
             while(v != null){
                 pila.mete(v);

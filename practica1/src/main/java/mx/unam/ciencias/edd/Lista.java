@@ -29,7 +29,7 @@ public class Lista<T> implements Coleccion<T> {
         public Nodo(T elemento) {
             // Aquí va su código.
 	    this.elemento = elemento;
-        }
+	}
     }
 
     /* Clase interna privada para iteradores. */
@@ -82,13 +82,13 @@ public class Lista<T> implements Coleccion<T> {
             // Aquí va su código.
 	    anterior = null;
 	    siguiente = cabeza;
-        }
+	}
 
         /* Mueve el iterador al final de la lista. */
         @Override public void end() {
             // Aquí va su código.
-	    anterior = rabo;
 	    siguiente = null;
+	    anterior = rabo;
         }
     }
 
@@ -220,7 +220,7 @@ public class Lista<T> implements Coleccion<T> {
 	    longitud++;
 	}
     }
-
+    
     private Nodo iesimoNodo(int i){
 	Iterador it = (Iterador)iteradorLista();
 	int c = 0;
@@ -300,8 +300,8 @@ public class Lista<T> implements Coleccion<T> {
     /**
      * Nos dice si un elemento está en la lista.
      * @param elemento el elemento que queremos saber si está en la lista.
-     * @return <tt>true</tt> si <tt>elemento</tt> está en la lista,
-     *         <tt>false</tt> en otro caso.
+     * @return <code>true</code> si <code>elemento</code> está en la lista,
+     *         <code>false</code> en otro caso.
      */
     @Override public boolean contiene(T elemento) {
         // Aquí va su código.
@@ -418,8 +418,8 @@ public class Lista<T> implements Coleccion<T> {
     /**
      * Nos dice si la lista es igual al objeto recibido.
      * @param objeto el objeto con el que hay que comparar.
-     * @return <tt>true</tt> si la lista es igual al objeto recibido;
-     *         <tt>false</tt> en otro caso.
+     * @return <code>true</code> si la lista es igual al objeto recibido;
+     *         <code>false</code> en otro caso.
      */
     @Override public boolean equals(Object objeto) {
         if (objeto == null || getClass() != objeto.getClass())
