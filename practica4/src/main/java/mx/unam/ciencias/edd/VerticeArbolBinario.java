@@ -9,22 +9,22 @@ public interface VerticeArbolBinario<T> {
 
     /**
      * Nos dice si el vértice tiene vértice padre.
-     * @return <tt>true</tt> si el vértice tiene vértice padre, <tt>false</tt>
-     *         en otro caso.
+     * @return <code>true</code> si el vértice tiene vértice padre,
+     *         <code>false</code> en otro caso.
      */
     public boolean hayPadre();
 
     /**
      * Nos dice si el vértice tiene vértice izquierdo.
-     * @return <tt>true</tt> si el vértice tiene vértice izquierdo,
-     *         <tt>false</tt> en otro caso.
+     * @return <code>true</code> si el vértice tiene vértice izquierdo,
+     *         <code>false</code> en otro caso.
      */
     public boolean hayIzquierdo();
 
     /**
      * Nos dice si el vértice tiene vértice derecho.
-     * @return <tt>true</tt> si el vértice tiene vértice derecho, <tt>false</tt>
-     *         en otro caso.
+     * @return <code>true</code> si el vértice tiene vértice derecho,
+     *         <code>false</code> en otro caso.
      */
     public boolean hayDerecho();
 

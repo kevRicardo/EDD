@@ -2,28 +2,45 @@ Estructuras de Datos
 ====================
 
 Práctica 4: Árboles rojinegros
-------------------------------
+-------------------------------
 
-### Fecha de entrega: martes 19 de marzo, 2019
+### Fecha de entrega: martes 1° de octubre, 2019
 
-Deben implementar los métodos faltantes de la clase
-[`ArbolRojinegro`](https://aztlan.fciencias.unam.mx/gitlab/2019-2-edd/practica4/blob/master/src/main/java/mx/unam/ciencias/edd/ArbolRojinegro.java).
+Deben implementar los métodos faltantes de las clases
+[`ArbolRojinegro`](https://aztlan.fciencias.unam.mx/gitlab/2020-1-edd/practica4/blob/master/src/main/java/mx/unam/ciencias/edd/ArbolRojinegro.java).
 
-Una vez que hayan terminado con su clase, además de que debe de pasar todas sus
-pruebas unitarias, se debe ejecutar correctamente el programa escrito en la
-clase
-[`Practica4`](https://aztlan.fciencias.unam.mx/gitlab/2019-2-edd/practica4/blob/master/src/main/java/mx/unam/ciencias/edd/Practica4.java).
+Una vez que hayan terminado sus clases, la práctica debe compilar al hacer:
+
+```
+$ mvn compile
+```
+
+También debe pasar todas sus pruebas unitarias al hacer:
+
+```
+$ mvn test
+```
+
+Y por último, debe correr correctamente el programa escrito en la clase
+[`Practica4`](https://aztlan.fciencias.unam.mx/gitlab/2020-1-edd/practica4/blob/master/src/main/java/mx/unam/ciencias/edd/Practica4.java)
+al ejecutar:
+
+```
+$ mvn install
+...
+$ java -jar target/practica4.jar
+```
 
 Los únicos archivos que deben modificar son:
 
-* `ArbolBinario`,
-* `ArbolBinarioCompleto`,
-* `ArbolBinarioOrdenado`,
-* `ArbolRojinegro`,
+* `ArbolBinario.java`,
+* `ArbolBinarioCompleto.java`,
+* `ArbolBinarioOrdenado.java`,
+* `ArbolRojinegro.java`,
 * `Arreglos.java`,
 * `Cola.java`,
 * `Lista.java`,
-* `MeteSaca.java` y
+* `MeteSaca.java`, y
 * `Pila.java`.
 
 *No deben modificar de ninguna manera ninguno de los otros archivos de la
@@ -33,20 +50,21 @@ práctica*.
 
 Pueden clonar la práctica con el siguiente comando:
 
-```shell
-$ git clone https://aztlan.fciencias.unam.mx/gitlab/2019-2-edd/practica4.git
+```
+$ git clone https://aztlan.fciencias.unam.mx/gitlab/2020-1-edd/practica4.git
 ```
 
 ### Documentación
 
 La documentación generada por JavaDoc la pueden consultar aquí:
 
-[Documentación generada por JavaDoc para la práctica 4](https://aztlan.fciencias.unam.mx/~canek/2019-2-edd/practica4/apidocs/index.html)
+[Documentación generada por JavaDoc para la práctica
+4](https://aztlan.fciencias.unam.mx/~canek/2020-1-edd/practica4/apidocs/index.html)
 
 ### Capítulos del libro
 
-El capítulo
-[del libro](https://tienda.fciencias.unam.mx/es/home/437-estructuras-de-datos-con-java-moderno-9786073009157.html)
-relacionado a esta práctica es:
+Los capítulos [del
+libro](https://tienda.fciencias.unam.mx/es/home/437-estructuras-de-datos-con-java-moderno-9786073009157.html)
+relacionados a esta práctica son:
 
 15. Árboles rojinegros

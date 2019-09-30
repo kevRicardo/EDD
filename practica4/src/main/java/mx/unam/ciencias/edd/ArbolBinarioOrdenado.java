@@ -26,7 +26,7 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
         /* Inicializa al iterador. */
         public Iterador() {
             // Aquí va su código.
-	     pila = new Pila<Vertice>();
+	    pila = new Pila<Vertice>();
             Vertice v = raiz;
             while(v != null){
                 pila.mete(v);
@@ -213,15 +213,15 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
         if (vertice.padre == null)
             raiz = u;
         if (u != null)
-            u.padre = p;	
+            u.padre = p;
     }
 
     /**
      * Busca un elemento en el árbol recorriéndolo in-order. Si lo encuentra,
-     * regresa el vértice que lo contiene; si no, regresa <tt>null</tt>.
+     * regresa el vértice que lo contiene; si no, regresa <code>null</code>.
      * @param elemento el elemento a buscar.
      * @return un vértice que contiene al elemento buscado si lo
-     *         encuentra; <tt>null</tt> en otro caso.
+     *         encuentra; <code>null</code> en otro caso.
      */
     @Override public VerticeArbolBinario<T> busca(T elemento) {
         // Aquí va su código.
@@ -236,7 +236,7 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
         if (v.elemento.compareTo(elemento) < 0 && v.derecho != null)
             return busca(v.derecho, elemento);
         return null;
-     }
+    }
 
     /**
      * Regresa el vértice que contiene el último elemento agregado al
@@ -250,7 +250,8 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      *         elemento al árbol.
      */
     public VerticeArbolBinario<T> getUltimoVerticeAgregado() {
-        return ultimoAgregado;
+        // Aquí va su código.
+	return ultimoAgregado;
     }
 
     /**

@@ -72,7 +72,7 @@ public class ArbolBinarioCompleto<T> extends ArbolBinario<T> {
 	if(elemento == null)
 	    throw new IllegalArgumentException();
 	Vertice t = nuevoVertice(elemento);
-	elementos += 1;
+	elementos++;
         if(esVacia())
             raiz = t;
         else{
@@ -107,7 +107,7 @@ public class ArbolBinarioCompleto<T> extends ArbolBinario<T> {
 	Vertice v = vertice(busca(elemento));
         if(esVacia() || elemento == null || v == null)
             return;
-        elementos -= 1;
+        elementos--;
         if(elementos == 0){
             raiz = null;
             return;
