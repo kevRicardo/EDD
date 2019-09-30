@@ -69,8 +69,8 @@ public abstract class MeteSaca<T> {
 
     /**
      * Nos dice si la estructura está vacía.
-     * @return <tt>true</tt> si la estructura no tiene elementos,
-     *         <tt>false</tt> en otro caso.
+     * @return <code>true</code> si la estructura no tiene elementos,
+     *         <code>false</code> en otro caso.
      */
     public boolean esVacia() {
         // Aquí va su código.
@@ -89,8 +89,7 @@ public abstract class MeteSaca<T> {
             return false;
         @SuppressWarnings("unchecked") MeteSaca<T> m = (MeteSaca<T>)object;
         // Aquí va su código.
-	Nodo n = cabeza;
-	Nodo p = m.cabeza;
+	Nodo n = cabeza, p = m.cabeza;
 	while(n != null && p != null){
 	    if(!n.elemento.equals(p.elemento))
 		return false;

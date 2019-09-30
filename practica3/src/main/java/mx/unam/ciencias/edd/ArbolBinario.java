@@ -35,8 +35,8 @@ public abstract class ArbolBinario<T> implements Coleccion<T> {
 
         /**
          * Nos dice si el vértice tiene un padre.
-         * @return <tt>true</tt> si el vértice tiene padre,
-         *         <tt>false</tt> en otro caso.
+         * @return <code>true</code> si el vértice tiene padre,
+         *         <code>false</code> en otro caso.
          */
         @Override public boolean hayPadre() {
             // Aquí va su código.
@@ -45,8 +45,8 @@ public abstract class ArbolBinario<T> implements Coleccion<T> {
 
         /**
          * Nos dice si el vértice tiene un izquierdo.
-         * @return <tt>true</tt> si el vértice tiene izquierdo,
-         *         <tt>false</tt> en otro caso.
+         * @return <code>true</code> si el vértice tiene izquierdo,
+         *         <code>false</code> en otro caso.
          */
         @Override public boolean hayIzquierdo() {
             // Aquí va su código.
@@ -55,8 +55,8 @@ public abstract class ArbolBinario<T> implements Coleccion<T> {
 
         /**
          * Nos dice si el vértice tiene un derecho.
-         * @return <tt>true</tt> si el vértice tiene derecho,
-         *         <tt>false</tt> en otro caso.
+         * @return <code>true</code> si el vértice tiene derecho,
+         *         <code>false</code> en otro caso.
          */
         @Override public boolean hayDerecho() {
             // Aquí va su código.
@@ -97,7 +97,7 @@ public abstract class ArbolBinario<T> implements Coleccion<T> {
 	    if(!hayDerecho())
 		throw new NoSuchElementException();
 	    return derecho;
-	}
+        }
 
         /**
          * Regresa la altura del vértice.
@@ -202,7 +202,8 @@ public abstract class ArbolBinario<T> implements Coleccion<T> {
      * @return un nuevo vértice con el elemento recibido dentro del mismo.
      */
     protected Vertice nuevoVertice(T elemento) {
-        return new Vertice(elemento);
+        // Aquí va su código.
+	return new Vertice(elemento);
     }
 
     /**
@@ -232,7 +233,19 @@ public abstract class ArbolBinario<T> implements Coleccion<T> {
      */
     @Override public boolean contiene(T elemento) {
         // Aquí va su código.
-	return busca(raiz, elemento) != null;
+	return busca(elemento) != null;
+    }
+
+    /**
+     * Busca el vértice de un elemento en el árbol. Si no lo encuentra regresa
+     * <code>null</code>.
+     * @param elemento el elemento para buscar el vértice.
+     * @return un vértice que contiene el elemento buscado si lo encuentra;
+     *         <code>null</code> en otro caso.
+     */
+    public VerticeArbolBinario<T> busca(T elemento) {
+        // Aquí va su código.
+	return busca(raiz, elemento);
     }
 
     private Vertice busca(Vertice v, T e){
@@ -247,18 +260,6 @@ public abstract class ArbolBinario<T> implements Coleccion<T> {
 	if(t != null)
 	    return t;
 	return null;
-    }
-
-    /**
-     * Busca el vértice de un elemento en el árbol. Si no lo encuentra regresa
-     * <tt>null</tt>.
-     * @param elemento el elemento para buscar el vértice.
-     * @return un vértice que contiene el elemento buscado si lo encuentra;
-     *         <tt>null</tt> en otro caso.
-     */
-    public VerticeArbolBinario<T> busca(T elemento) {
-        // Aquí va su código.
-	return busca(raiz, elemento);
     }
 
     /**
