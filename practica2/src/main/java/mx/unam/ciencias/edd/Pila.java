@@ -11,13 +11,13 @@ public class Pila<T> extends MeteSaca<T> {
      */
     @Override public String toString() {
         // Aquí va su código.
-	Nodo n = cabeza;
-	String c = "";
-	while(n != null){
-	    c += n.elemento + "\n";
-	    n = n.siguiente;
-	}
-	return c;
+        Nodo n = cabeza;
+        String c = "";
+        while(n != null){
+          c += n.elemento + "\n";
+          n = n.siguiente;
+        }
+        return c;
     }
 
     /**

@@ -4,34 +4,49 @@ Estructuras de Datos
 Práctica 2: Pilas, colas, ordenamientos y búsquedas
 ---------------------------------------------------
 
-### Fecha de entrega: martes 26 de febrero, 2018
+### Fecha de entrega: martes 3 de septiembre, 2019
 
-Deben implementar los métodos faltantes de la clase abstracta
-[`MeteSaca`](https://aztlan.fciencias.unam.mx/gitlab/2019-2-edd/practica2/blob/master/src/main/java/mx/unam/ciencias/edd/MeteSaca.java),
-y los de sus clases herederas
-[`Pila`](https://aztlan.fciencias.unam.mx/gitlab/2019-2-edd/practica2/blob/master/src/main/java/mx/unam/ciencias/edd/Pila.java) y
-[`Cola`](https://aztlan.fciencias.unam.mx/gitlab/2019-2-edd/practica2/blob/master/src/main/java/mx/unam/ciencias/edd/Cola.java).
-
-Además deben implementar los métodos faltantes de la clase
-[`Arreglos`](https://aztlan.fciencias.unam.mx/gitlab/2019-2-edd/practica2/blob/master/src/main/java/mx/unam/ciencias/edd/Arreglos.java)
-y agregar los métodos
-[`mergeSort()`](https://aztlan.fciencias.unam.mx/gitlab/2019-2-edd/practica2/blob/master/src/main/java/mx/unam/ciencias/edd/Lista.java#L310)
+Deben implementar los métodos faltantes de las clases
+[`MeteSaca`](https://aztlan.fciencias.unam.mx/gitlab/2020-1-edd/practica2/blob/master/src/main/java/mx/unam/ciencias/edd/MeteSaca.java),
+[`Cola`](https://aztlan.fciencias.unam.mx/gitlab/2020-1-edd/practica2/blob/master/src/main/java/mx/unam/ciencias/edd/Cola.java),
+[`Pila`](https://aztlan.fciencias.unam.mx/gitlab/2020-1-edd/practica2/blob/master/src/main/java/mx/unam/ciencias/edd/Pila.java),
 y
-[`busquedaLineal()`](https://aztlan.fciencias.unam.mx/gitlab/2019-2-edd/practica2/blob/master/src/main/java/mx/unam/ciencias/edd/Lista.java#L335)
-a su clase
-[`Lista`](https://aztlan.fciencias.unam.mx/gitlab/2019-2-edd/practica2/blob/master/src/main/java/mx/unam/ciencias/edd/Lista.java).
+[`Arreglos`](https://aztlan.fciencias.unam.mx/gitlab/2020-1-edd/practica2/blob/master/src/main/java/mx/unam/ciencias/edd/Arreglos.java).
+Por último, deben agregar los métodos
+[`mergeSort()`](https://aztlan.fciencias.unam.mx/gitlab/2020-1-edd/practica2/blob/master/src/main/java/mx/unam/ciencias/edd/Lista.java#L310)
+y
+[`busquedaLineal()`](https://aztlan.fciencias.unam.mx/gitlab/2020-1-edd/practica2/blob/master/src/main/java/mx/unam/ciencias/edd/Lista.java#L335)
+a la clase
+[`Lista`](https://aztlan.fciencias.unam.mx/gitlab/2020-1-edd/practica2/blob/master/src/main/java/mx/unam/ciencias/edd/Lista.java).
 
-Una vez que hayan terminado con sus clases, además de que deben de pasar todas
-sus pruebas unitarias, se debe ejecutar correctamente el programa escrito en la
-clase
-[`Practica2`](https://aztlan.fciencias.unam.mx/gitlab/2019-2-edd/practica2/blob/master/src/mx/unam/ciencias/edd/Practica2.java).
+Una vez que hayan terminado sus clases, la práctica debe compilar al hacer:
+
+```
+$ mvn compile
+```
+
+También debe pasar todas sus pruebas unitarias al hacer:
+
+```
+$ mvn test
+```
+
+Y por último, debe correr correctamente el programa escrito en la clase
+[`Practica2`](https://aztlan.fciencias.unam.mx/gitlab/2020-1-edd/practica2/blob/master/src/main/java/mx/unam/ciencias/edd/Practica2.java)
+al ejecutar:
+
+```
+$ mvn install
+...
+$ java -jar target/practica2.jar
+```
 
 Los únicos archivos que deben modificar son:
 
 * `Arreglos.java`,
 * `Cola.java`,
 * `Lista.java`,
-* `MeteSaca.java` y
+* `MeteSaca.java`, y
 * `Pila.java`.
 
 *No deben modificar de ninguna manera ninguno de los otros archivos de la
@@ -41,15 +56,15 @@ práctica*.
 
 Pueden clonar la práctica con el siguiente comando:
 
-```shell
-$ git clone https://aztlan.fciencias.unam.mx/gitlab/2019-2-edd/practica2.git
+```
+$ git clone https://aztlan.fciencias.unam.mx/gitlab/2020-1-edd/practica2.git
 ```
 
 ### Documentación
 
 La documentación generada por JavaDoc la pueden consultar aquí:
 
-[Documentación generada por JavaDoc para la práctica 2](https://aztlan.fciencias.unam.mx/~canek/2019-2-edd/practica2/apidocs/index.html)
+[Documentación generada por JavaDoc para la práctica 2](https://aztlan.fciencias.unam.mx/~canek/2020-1-edd/practica2/apidocs/index.html)
 
 ### Capítulos del libro
 
@@ -61,5 +76,5 @@ relacionados a esta práctica son:
 7. Arreglos
 8. Pilas y colas
 9. Lambdas
-10. Ordenamientos
-11. Búsquedas
+9. Ordenamientos
+10. Búsquedas

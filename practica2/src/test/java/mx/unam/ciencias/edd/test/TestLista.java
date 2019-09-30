@@ -405,7 +405,7 @@ public class TestLista {
                 m = d - 1;
         }
         Assert.assertTrue(lista.contiene(m));
-        Assert.assertTrue(lista.contiene(new Integer(m)));
+        Assert.assertTrue(lista.contiene(Integer.valueOf(m)));
         Assert.assertFalse(lista.contiene(n));
     }
 
@@ -588,7 +588,7 @@ public class TestLista {
         for (int i = 0; i < total; i++) {
             int r = random.nextInt(total);
             lista.agrega(r);
-            otra.agrega(new Integer(r));
+            otra.agrega(Integer.valueOf(r));
         }
         Assert.assertTrue(lista.equals(otra));
         int u = lista.eliminaUltimo();

@@ -50,7 +50,7 @@ public class Lista<T> implements Coleccion<T> {
         @Override public boolean hasNext() {
             // Aquí va su código.
 	    return siguiente != null;
-	}
+        }
 
         /* Nos da el elemento siguiente. */
         @Override public T next() {
@@ -90,7 +90,7 @@ public class Lista<T> implements Coleccion<T> {
             // Aquí va su código.
 	    anterior = rabo;
 	    siguiente = null;
-	}
+        }
     }
 
     /* Primer elemento de la lista. */
@@ -301,8 +301,8 @@ public class Lista<T> implements Coleccion<T> {
     /**
      * Nos dice si un elemento está en la lista.
      * @param elemento el elemento que queremos saber si está en la lista.
-     * @return <tt>true</tt> si <tt>elemento</tt> está en la lista,
-     *         <tt>false</tt> en otro caso.
+     * @return <code>true</code> si <code>elemento</code> está en la lista,
+     *         <code>false</code> en otro caso.
      */
     @Override public boolean contiene(T elemento) {
         // Aquí va su código.
@@ -419,8 +419,8 @@ public class Lista<T> implements Coleccion<T> {
     /**
      * Nos dice si la lista es igual al objeto recibido.
      * @param objeto el objeto con el que hay que comparar.
-     * @return <tt>true</tt> si la lista es igual al objeto recibido;
-     *         <tt>false</tt> en otro caso.
+     * @return <code>true</code> si la lista es igual al objeto recibido;
+     *         <code>false</code> en otro caso.
      */
     @Override public boolean equals(Object objeto) {
         if (objeto == null || getClass() != objeto.getClass())
@@ -464,36 +464,36 @@ public class Lista<T> implements Coleccion<T> {
         // Aquí va su código.
 	if(longitud < 2)
 	    return copia();
-	Lista<T> l1 = new Lista<>();
-	Lista<T> l2 = new Lista<>();
-	int n = getLongitud();
-	for(T e: this){
-	    Lista<T> m = (n-- > getLongitud()/2) ? l1 : l2;
-	    m.agrega(e);
-	}
-	return mezcla(l1.mergeSort(comparador), l2.mergeSort(comparador), comparador);
+	Lista<T> li = new Lista<>();
+	Lista<T> ld = new Lista<>();
+	Iterador n = (Iterador)iteradorLista();
+        for(int i = 0; i < this.longitud; i++)
+	    if(i < this.longitud/2)
+		li.agrega(n.next());
+	    else
+		ld.agrega(n.next());
+	return mezcla(li.mergeSort(comparador), ld.mergeSort(comparador), comparador);
     }
-
-    private static <T> Lista<T>
-	mezcla(Lista<T> l1, Lista<T> l2, Comparator<T> c){
+    
+    private Lista<T> mezcla(Lista<T> l1, Lista<T> l2, Comparator<T> c){
 	Lista<T> l = new Lista<>();
-	Lista<T>.Nodo n = l1.cabeza;
-	Lista<T>.Nodo m = l2.cabeza;
-	while(n != null && m != null){
-	    if(c.compare(n.elemento, m.elemento) < 0){
-		l.agrega(n.elemento);
-		n = n.siguiente;
-	    }else{
-		l.agrega(m.elemento);
-		m = m.siguiente;
-	    }
-	}
-	Lista<T>.Nodo o = (n == null) ? m : n;
+        Nodo n = l1.cabeza;
+        Nodo m = l2.cabeza;
+        while(n != null && m != null) {
+          if(c.compare(n.elemento, m.elemento) <= 0) {
+            l.agrega(n.elemento);
+            n = n.siguiente;
+          }else{
+            l.agregaFinal(m.elemento);
+            m = m.siguiente;
+          }
+        }
+	Nodo o = (n == null) ? m : n;
 	while(o != null){
 	    l.agrega(o.elemento);
 	    o = o.siguiente;
 	}
-	return l;
+        return l;
     }
 
     /**
@@ -514,8 +514,8 @@ public class Lista<T> implements Coleccion<T> {
      * método supone que la lista está ordenada usando el mismo comparador.
      * @param elemento el elemento a buscar.
      * @param comparador el comparador con el que la lista está ordenada.
-     * @return <tt>true</tt> si el elemento está contenido en la lista,
-     *         <tt>false</tt> en otro caso.
+     * @return <code>true</code> si el elemento está contenido en la lista,
+     *         <code>false</code> en otro caso.
      */
     public boolean busquedaLineal(T elemento, Comparator<T> comparador) {
         // Aquí va su código.
@@ -533,8 +533,8 @@ public class Lista<T> implements Coleccion<T> {
      * @param <T> tipo del que puede ser la lista.
      * @param lista la lista donde se buscará.
      * @param elemento el elemento a buscar.
-     * @return <tt>true</tt> si el elemento está contenido en la lista,
-     *         <tt>false</tt> en otro caso.
+     * @return <code>true</code> si el elemento está contenido en la lista,
+     *         <code>false</code> en otro caso.
      */
     public static <T extends Comparable<T>>
     boolean busquedaLineal(Lista<T> lista, T elemento) {
