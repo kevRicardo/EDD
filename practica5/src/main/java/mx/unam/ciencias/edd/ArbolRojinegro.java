@@ -7,7 +7,7 @@ package mx.unam.ciencias.edd;
  * <ol>
  *  <li>Todos los vértices son NEGROS o ROJOS.</li>
  *  <li>La raíz es NEGRA.</li>
- *  <li>Todas las hojas (<tt>null</tt>) son NEGRAS (al igual que la raíz).</li>
+ *  <li>Todas las hojas (<code>null</code>) son NEGRAS (al igual que la raíz).</li>
  *  <li>Un vértice ROJO siempre tiene dos hijos NEGROS.</li>
  *  <li>Todo camino de un vértice a alguna de sus hojas descendientes tiene el
  *      mismo número de vértices NEGROS.</li>
@@ -42,8 +42,8 @@ public class ArbolRojinegro<T extends Comparable<T>>
          */
         public String toString() {
             // Aquí va su código.
-	    return (color == Color.ROJO ? "R" : "N") + "{" + elemento.toString() + "}";
-	}
+	    return (color == Color.ROJO ? "R" : "N" ) + "{" + elemento.toString() + "}";
+        }
 
         /**
          * Compara el vértice con otro objeto. La comparación es
@@ -62,7 +62,7 @@ public class ArbolRojinegro<T extends Comparable<T>>
                 VerticeRojinegro vertice = (VerticeRojinegro)objeto;
             // Aquí va su código.
 	    return (color == vertice.color && super.equals(objeto));
-	}
+        }
     }
 
     /**
@@ -88,7 +88,8 @@ public class ArbolRojinegro<T extends Comparable<T>>
      * @return un nuevo vértice rojinegro con el elemento recibido dentro del mismo.
      */
     @Override protected Vertice nuevoVertice(T elemento) {
-        return new VerticeRojinegro(elemento);
+        // Aquí va su código.
+	return new VerticeRojinegro(elemento);
     }
 
     /**
@@ -100,13 +101,11 @@ public class ArbolRojinegro<T extends Comparable<T>>
      */
     public Color getColor(VerticeArbolBinario<T> vertice) {
         // Aquí va su código.
-	VerticeRojinegro r = verticeRojinegro(vertice);
-	return r.color;
+	return verticeRojinegro(vertice).color;
     }
 
     private VerticeRojinegro verticeRojinegro(VerticeArbolBinario<T> v){
-	VerticeRojinegro n = (VerticeRojinegro)v;
-	return n;
+	return (VerticeRojinegro)v;
     }
 
     /**
@@ -130,7 +129,8 @@ public class ArbolRojinegro<T extends Comparable<T>>
             return;
 	}
         p = verticeRojinegro(v.padre);
-	if(!esRojo(p)) return;
+	if(!esRojo(p))
+	    return;
         a = verticeRojinegro(p.padre);
         if(esHijoIzquierdo(p))
             t = verticeRojinegro(a.derecho);
@@ -178,7 +178,8 @@ public class ArbolRojinegro<T extends Comparable<T>>
         // Aquí va su código.
 	VerticeRojinegro u, h;
         VerticeRojinegro v = verticeRojinegro(super.busca(elemento));
-        if(v == null) return;
+        if(v == null)
+	    return;
         elementos--;
         if(v.hayIzquierdo() && v.hayDerecho())
             v = verticeRojinegro(intercambiaEliminable(v));
@@ -266,7 +267,7 @@ public class ArbolRojinegro<T extends Comparable<T>>
             super.giraDerecha(p);
         }
     }
-    
+
     /**
      * Lanza la excepción {@link UnsupportedOperationException}: los árboles
      * rojinegros no pueden ser girados a la izquierda por los usuarios de la

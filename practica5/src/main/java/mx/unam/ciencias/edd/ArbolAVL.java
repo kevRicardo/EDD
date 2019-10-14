@@ -33,7 +33,7 @@ public class ArbolAVL<T extends Comparable<T>>
         @Override public int altura() {
             // Aquí va su código.
 	    return altura;
-	}
+        }
 
         /**
          * Regresa una representación en cadena del vértice AVL.
@@ -59,13 +59,8 @@ public class ArbolAVL<T extends Comparable<T>>
                 return false;
             @SuppressWarnings("unchecked") VerticeAVL vertice = (VerticeAVL)objeto;
             // Aquí va su código.
-	    return (altura == vertice.altura && super.equals(objeto));
+	    return super.equals(objeto);
         }
-    }
-
-    /* Convierte el vértice a VerticeAVL */
-    private VerticeAVL verticeAVL(VerticeArbolBinario<T> vertice) {
-        return (VerticeAVL)vertice;
     }
 
     /**
@@ -90,7 +85,12 @@ public class ArbolAVL<T extends Comparable<T>>
      */
     @Override protected Vertice nuevoVertice(T elemento) {
         // Aquí va su código.
-	return new VerticeAVL(elemento);
+	return new VerticeAVL(elemento);	
+    }
+
+    /* Convierte el vértice a VerticeAVL */
+    private VerticeAVL verticeAVL(VerticeArbolBinario<T> vertice){
+	return (VerticeAVL)vertice;
     }
 
     /**
@@ -215,7 +215,7 @@ public class ArbolAVL<T extends Comparable<T>>
             v.padre.derecho = null;
         elementos--;
     }
-    
+
     /**
      * Lanza la excepción {@link UnsupportedOperationException}: los árboles AVL
      * no pueden ser girados a la derecha por los usuarios de la clase, porque
